@@ -11,12 +11,11 @@ function deleteItemLocal(item) {
   localStorage.removeItem(item);
 }
 
-
 const sendName = () => {
   const sendName = getinputValue("name-field");
   const stringifyName = JSON.stringify(sendName);
   setItemToLocal("name", stringifyName);
-//   console.log(sendName);
+  //   console.log(sendName);
 };
 
 const deleteName = () => {
@@ -42,7 +41,13 @@ const deleteMssg = () => {
   deleteItemLocal("message");
 };
 
+const resetLocal = () => {
+  localStorage.clear();
+};
 
-const resetLocal = () =>{
-    localStorage.clear();
+const sendAllData = () =>{
+    sendName();
+    sendMail();
+    sendMssg();
+
 }
