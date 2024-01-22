@@ -7,24 +7,37 @@ function getinputValue(id) {
 function setItemToLocal(item, itemValue) {
   localStorage.setItem(item, itemValue);
 }
-
-function keyValue(key, stringifyValue) {
-  key = {};
-  localStorage.getItem(`${key}`);
-  if (key) {
-    key = stringifyValue;
-  }
-  return key;
+function deleteItemLocal(item) {
+  localStorage.removeItem(item);
 }
 
+
 const sendName = () => {
-    let name;
-    const sendName = getinputValue("name-field");
-    const stringifyName = JSON.stringify(sendName);
-    name = keyValue(name, stringifyName);
+  const sendName = getinputValue("name-field");
+  const stringifyName = JSON.stringify(sendName);
   setItemToLocal("name", stringifyName);
-  console.log(sendName);
+//   console.log(sendName);
 };
+
 const deleteName = () => {
-  localStorage.removeItem("name");
+  deleteItemLocal("name");
+};
+
+const sendMail = () => {
+  const sendMail = getinputValue("email-field");
+  const stringifyMail = JSON.stringify(sendMail);
+  setItemToLocal("email", stringifyMail);
+};
+
+const deleteMail = () => {
+  deleteItemLocal("email");
+};
+const sendMssg = () => {
+  const sendMssg = getinputValue("message-field");
+  const stringifyMssg = JSON.stringify(sendMssg);
+  setItemToLocal("message", stringifyMssg);
+};
+
+const deleteMssg = () => {
+  deleteItemLocal("message");
 };
