@@ -41,3 +41,8 @@ const sendMssg = () => {
 const deleteMssg = () => {
   deleteItemLocal("message");
 };
+
+
+const resetLocal = () =>{
+    localStorage.clear();
+}
